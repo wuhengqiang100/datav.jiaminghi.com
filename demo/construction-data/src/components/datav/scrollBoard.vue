@@ -1,6 +1,10 @@
 <template>
-  <div id="scroll-board">
-    <dv-scroll-board :config="config" />
+  <div id="scroll-board" style="height:98%;background-color: #091a2d;">
+       <!-- <div class="table-name">
+        <img src="./img/icon1.png" />人员贡献排行榜
+      </div> -->
+
+    <dv-scroll-board :config="config"  @click="testClick"/>
   </div>
 </template>
 
@@ -10,39 +14,82 @@ export default {
   data () {
     return {
       config: {
-        header: ['时间', '病害信息', '数量', '标段'],
+        header: ['站点', '报警描述'],
         data: [
-          ['2019-07-01 19:25:00', '路面危害-松散', '5', 'xxxxxxx'],
-          ['2019-07-02 17:25:00', '路面危害-路面油污清理', '13', 'xxxxxxx'],
-          ['2019-07-03 16:25:00', '交安设施-交通标志牌结构', '6', 'xxxxxxx'],
-          ['2019-07-04 15:25:00', '路基危害-防尘网', '2', 'xxxxxxx'],
-          ['2019-07-05 14:25:00', '交安设施-交通标志牌结构', '1', 'xxxxxxx'],
-          ['2019-07-06 13:25:00', '路面危害-松散', '3', 'xxxxxxx'],
-          ['2019-07-07 12:25:00', '路基危害-防尘网', '4', 'xxxxxxx'],
-          ['2019-07-08 11:25:00', '路面危害-路面油污清理', '2', 'xxxxxxx'],
-          ['2019-07-09 10:25:00', '交安设施-交通标志牌结构', '5', 'xxxxxxx'],
-          ['2019-07-10 09:25:00', '路基危害-防尘网', '3', 'xxxxxxx']
+          ['站点0001', '这是一条报警描述1'],
+          ['站点0002', '这是一条报警描述1'],
+          ['站点0003', '这是一条报警描述1'],
+          ['站点0004', '这是一条报警描述1'],
+          ['站点0005', '这是一条报警描述1'],
+          ['站点0006', '这是一条报警描述1'],
+          ['站点0007', '这是一条报警描述1'],
+          ['站点0008', '这是一条报警描述1'],
+          ['站点0009', '这是一条报警描述1'],
+          ['站点0010', '这是一条报警描述1'],
+          ['站点0011', '这是一条报警描述1'],
+          ['站点0012', '这是一条报警描述1'],
+          ['站点0013', '这是一条报警描述1'],
+          ['站点0014', '这是一条报警描述1'],
+          ['站点0015', '这是一条报警描述1'],
+          ['站点0016', '这是一条报警描述1'],
+          ['站点0017', '这是一条报警描述1'],
+          ['站点0018', '这是一条报警描述1'],
+          ['站点0019', '这是一条报警描述1'],
+          ['站点0020', '这是一条报警描述1'],
+          ['站点0021', '这是一条报警描述1'],
+          ['站点0022', '这是一条报警描述1'],
+          ['站点0023', '这是一条报警描述1'],
+          ['站点0024', '这是一条报警描述1'],
+          ['站点0025', '这是一条报警描述1'],
+          // ['2019-07-02 17:25:00', '路面危害-路面油污清理', '13', 'xxxxxxx'],
+
         ],
         index: true,
-        columnWidth: [50, 170, 300],
+        columnWidth: [65, 110],
         align: ['center'],
-        rowNum: 7,
+        rowNum: 20,
         headerBGC: '#1981f6',
         headerHeight: 45,
         oddRowBGC: 'rgba(0, 44, 81, 0.8)',
-        evenRowBGC: 'rgba(10, 29, 50, 0.8)'
+        evenRowBGC: 'rgba(10, 29, 50, 0.8)',
+        carousel:'single',
+        indexHeader:'序号'
       }
     }
+  },
+ methods: {
+   //预留后面用来展示报警的具体信息
+    testClick(row,ceil,rowIndex,columnIndex) {
+      console.log(row)
+      console.log(row.ceil)
+      console.log(row.rowIndex)
+      console.log(row.columnIndex)
+    },
   }
 }
 </script>
 
 <style lang="less">
 #scroll-board {
-  width: 50%;
+  width: 98%;
   box-sizing: border-box;
   margin-left: 20px;
   height: 100%;
   overflow: hidden;
+
 }
+  .table-name {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+
+    img {
+      width: 25px;
+      height: 25px;
+      margin-right: 5px;
+    }
+  }
+
 </style>

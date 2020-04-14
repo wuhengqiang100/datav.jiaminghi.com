@@ -2,14 +2,19 @@
   <div id="cards">
     <div
       class="card-item"
-      v-for="(card, i) in cards"
+      v-for="(card) in cards"
       :key="card.title"
     >
       <div class="card-header">
-        <div class="card-header-left">{{ card.title }}</div>
-        <div class="card-header-right">{{ '0' + (i + 1) }}</div>
+
+        <div class="card-header-left">
+          <dv-decoration-11 style="width:160px;height:48px;">{{ card.title }}</dv-decoration-11>
+          </div>
+        <div class="card-header-right"><dv-decoration-1  style="width:160px;height:40px;" :color="['red', 'green']" dur="9"/></div>
+
       </div>
-      <dv-charts class="ring-charts" :option="card.ring" />
+      <!-- <dv-charts class="ring-charts" :option="card.ring" /> -->
+      <dv-charts class="main-content" :option="card.ring" />
       <div class="card-footer">
         <div class="card-footer-item">
           <div class="footer-title">累计金额</div>
@@ -40,8 +45,8 @@ export default {
     createData () {
       const { randomExtend } = this
 
-      this.cards = new Array(5).fill(0).map((foo, i) => ({
-        title: '测试路段' + (i + i),
+      this.cards = new Array(3).fill(0).map((foo, i) => ({
+        title: '设备' + (i + 1),
         total: {
           number: [randomExtend(9000, 10000)],
           content: '{nt}',
@@ -121,12 +126,12 @@ export default {
 #cards {
   display: flex;
   justify-content: space-between;
-  height: 45%;
+  height: 49%;
 
   .card-item {
     background-color: rgba(6, 30, 93, 0.5);
     border-top: 2px solid rgba(1, 153, 209, .5);
-    width: 19%;
+    width: 33%;
     display: flex;
     flex-direction: column;
   }
@@ -138,18 +143,20 @@ export default {
     justify-content: space-between;
 
     .card-header-left {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
       padding-left: 20px;
     }
 
     .card-header-right {
       padding-right: 20px;
-      font-size: 40px;
+      font-size: 24px;
       color: #03d3ec;
     }
   }
-
+ .main-content {
+    height: 55%;
+  }
   .ring-charts {
     height: 55%;
   }

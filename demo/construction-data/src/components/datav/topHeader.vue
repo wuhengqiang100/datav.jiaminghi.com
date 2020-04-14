@@ -3,7 +3,7 @@
     <dv-decoration-8 class="header-left-decoration" />
     <dv-decoration-5 class="header-center-decoration" />
     <dv-decoration-8 class="header-right-decoration" :reverse="true" />
-    <div class="center-title">施工养护综合数据</div>
+    <div class="center-title">北京安全线机检数据监控</div>
   </div>
 </template>
 

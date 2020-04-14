@@ -5,13 +5,22 @@
       <top-header />
 
       <div class="main-content">
-        <digital-flop />
+        <!-- <digital-flop /> -->
 
         <div class="block-left-right-content">
-          <ranking-board />
+          <!-- <ranking-board /> -->
+          <div style="width:75%">
 
-          <div class="block-top-bottom-content">
-            <div class="block-top-content">
+              <cards />
+              <span style="margin-top:2%"></span>
+              <cards />
+          </div>
+          <div style="width:25%">
+             <scroll-board />
+          </div>
+
+          <!-- <div class="block-top-bottom-content">
+             <div class="block-top-content">
               <rose-chart />
 
               <water-level-chart />
@@ -20,7 +29,9 @@
             </div>
 
             <cards />
-          </div>
+            <scroll-board />
+          </div> -->
+          <!-- <scroll-board /> -->
         </div>
       </div>
     </dv-full-screen-container>
@@ -90,11 +101,11 @@ export default {
   }
 
   .block-top-content {
-    height: 55%;
+    height: 100%;
     display: flex;
     flex-grow: 0;
     box-sizing: border-box;
-    padding-bottom: 20px;
+    // padding-bottom: 20px;
   }
 }
 </style>
